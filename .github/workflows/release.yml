@@ -48,7 +48,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to Chrome Web Store
-        run: npx chrome-webstore-upload-cli@latest upload --auto-publish
+        run: npx chrome-webstore-upload-cli@latest upload --auto-publish --source topic-tracker.zip
         env:
           EXTENSION_ID: ${{ secrets.CHROME_EXTENSION_ID }}
           CLIENT_ID: ${{ secrets.CHROME_CLIENT_ID }}
