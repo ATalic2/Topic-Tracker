@@ -44,7 +44,7 @@ export function SettingsModal({ settings, onUpdate, onExportAll, onImport, onCle
 
         {divider}
 
-        <label style={labelStyle}>Deduplicate within</label>
+        <label style={labelStyle}>Deduplicate URLs</label>
         <p style={hintStyle}>Don't re-save the same URL within this many hours of last visit.</p>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <input type="number" min={0} max={720} value={settings.dedupeHours} onChange={e => set({ dedupeHours: parseInt(e.target.value) || 24 })} style={inputStyle} />
