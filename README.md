@@ -1,6 +1,8 @@
 # Topic Tracker
 
-A privacy-first Chrome extension that automatically saves visited pages into custom topic groups based on keyword and regex rules. 100% local — no cloud, no tracking.
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/pblamjihhnkkecpdbipfidfachihajkl)](https://chromewebstore.google.com/detail/pblamjihhnkkecpdbipfidfachihajkl?utm_source=item-share-cb)
+
+A privacy-first Chrome extension that automatically saves visited pages into custom topic groups based on keyword and regex rules. 100% local.
 
 ## Features
 
