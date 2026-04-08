@@ -31,6 +31,7 @@ export interface Settings {
   expiryDays: number
   groupByDomain: boolean
   trackingEnabled: boolean
+  lightMode: boolean
 }
 
 export type SavedUrls = Record<string, SavedEntry[]>

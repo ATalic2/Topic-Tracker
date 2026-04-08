@@ -242,8 +242,10 @@ export default function App() {
             <FavoritesTab
               groups={groups}
               savedUrls={savedUrls}
+              groupByDomain={!!settings.groupByDomain}
               onToggleFavorite={handleToggleFavorite}
               onRemove={handleRemoveUrl}
+              onRemoveDomain={handleRemoveDomain}
             />
           )
         ) : isSearching ? (

@@ -35,6 +35,15 @@ export function SettingsModal({ settings, onUpdate, onExportAll, onImport, onCle
       </div>
       <div style={{ padding: 16, overflowY: 'auto', flex: 1 }}>
 
+        <label style={labelStyle}>Appearance</label>
+        <p style={hintStyle}>Choose between dark and light mode.</p>
+        <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: 13, cursor: 'pointer' }}>
+          <span>Light mode</span>
+          <Toggle id="light-mode" checked={!!settings.lightMode} onChange={v => set({ lightMode: v })} />
+        </label>
+
+        {divider}
+
         <label style={labelStyle}>Tracking</label>
         <p style={hintStyle}>When disabled, the extension stops saving new URLs entirely. Existing saved URLs are not affected.</p>
         <label style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', fontSize: 13, cursor: 'pointer' }}>

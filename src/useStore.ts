@@ -7,6 +7,11 @@ const DEFAULT_SETTINGS: Settings = {
   expiryDays: 30,
   groupByDomain: true,
   trackingEnabled: true,
+  lightMode: false,
+}
+
+function applyTheme(lightMode: boolean) {
+  document.documentElement.classList.toggle('light', lightMode)
 }
 
 export function useStore() {
@@ -19,7 +24,9 @@ export function useStore() {
     chrome.storage.local.get(['groups', 'savedUrls', 'settings'], (data) => {
       setGroups(data.groups || [])
       setSavedUrls(data.savedUrls || {})
-      setSettingsState(Object.assign({ ...DEFAULT_SETTINGS }, data.settings || {}))
+      const merged = Object.assign({ ...DEFAULT_SETTINGS }, data.settings || {})
+      setSettingsState(merged)
+      applyTheme(merged.lightMode)
       setLoaded(true)
     })
   }, [])
@@ -40,6 +47,7 @@ export function useStore() {
 
   const updateSettings = useCallback((next: Settings) => {
     setSettingsState(next)
+    applyTheme(next.lightMode)
     persist({ settings: next })
   }, [persist])
 
